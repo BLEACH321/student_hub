@@ -1,0 +1,18 @@
+# Root ignore
+node_modules/
+.env
+.vercel/
+*.sqlite
+dist/
+build/
+.DS_Store
+
+# Frontend
+Design Student Hub App/node_modules/
+Design Student Hub App/dist/
+Design Student Hub App/.env
+
+# Backend
+backend/node_modules/
+backend/.env
+backend/database.sqlite

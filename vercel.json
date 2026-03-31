@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "name": "student-hub",
+  "builds": [
+    {
+      "src": "backend/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "Design Student Hub App/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "backend/server.js"
+    },
+    {
+      "src": "/assets/(.*)",
+      "dest": "Design Student Hub App/dist/assets/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "Design Student Hub App/dist/$1",
+      "check": true
+    },
+    {
+      "src": "/(.*)",
+      "status": 200,
+      "dest": "Design Student Hub App/dist/index.html"
+    }
+  ]
+}
